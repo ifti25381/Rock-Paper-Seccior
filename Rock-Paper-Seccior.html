@@ -14,88 +14,68 @@
         2. Compare the moves to get the result
         3. Display the result in a popup
     -->
-        <button onclick="
-        const randomNumberRock = Math.random(); // We generate the numer automatically from 0 to 1
-        let computerMoveRock = ''; // The variable for Computer Move
-        if(randomNumberRock >= 0 && randomNumberRock < 1/3) { // Define it between 0 to 0.33
-            computerMoveRock = 'Rock'; // This will send the value to the let computerMoveRock = ''; variable
-        } else if(randomNumberRock >= 1/3 && randomNumberRock < 2/3){ // Define it between 0.33 to 0.66
-            computerMoveRock = 'Paper'; // This will send the value to the let computerMoveRock = ''; variable
-        } else if(randomNumberRock >= 2/3 && randomNumberRock < 1){ // Define it between 0.66 to 0.99
-            computerMoveRock = 'Scissors'; // This will send the value to the let computerMoveRock = ''; variable
-        }
-        
-        //console.log(computerMoveRock); // This will Print the value from computer variable after it get assign automatically
-        let resultRock = '';
-
-        if(computerMoveRock === 'Rock'){
-            resultRock = 'Match Tie';
-        } else if (computerMoveRock === 'Paper'){
-            resultRock = 'You Lose';
-        } else if (computerMoveRock === 'Scissors'){
-            resultRock = 'You Win';
-        }
-        alert(`You Picked Rock. Computer Pick ${computerMoveRock}. ${resultRock}.`);
-        
-
+    <button onclick="
+    let computerMoveRock = Math.random();
+    if (computerMoveRock < 0.34) {
+        computerMove = 'rock';
+    } else if(computerMoveRock <= 0.67) {
+        computerMove = 'paper';
+    } else {
+        computerMove = 'scissors';
+    }
+    console.log(computerMove);
+    let resultRock = '';
+    if (computerMove === 'rock') {
+        resultRock = 'It\'s a tie!';
+    } else if (computerMove === 'paper') {
+        resultRock = 'You lose!';
+    } else {
+        resultRock = 'You win!';
+    }
+    alert(`You chose Rock. Computer chose ${computerMove}. ${resultRock}`);
     ">Rock</button>
 
-
     <button onclick="
-        const randomNumberPaper = Math.random(); // We generate the numer automatically from 0 to 1
-        let computerMovePaper = ''; // The variable for Computer Move
-        if(randomNumberPaper >= 0 && randomNumberPaper < 1/3) { // Define it between 0 to 0.33
-            computerMovePaper = 'Rock'; // This will send the value to the let computerMovePaper = ''; variable
-        } else if(randomNumberPaper >= 1/3 && randomNumberPaper < 2/3){ // Define it between 0.33 to 0.66
-            computerMovePaper = 'Paper'; // This will send the value to the let computerMovePaper = ''; variable
-        } else if(randomNumberPaper >= 2/3 && randomNumberPaper < 1){ // Define it between 0.66 to 0.99
-            computerMovePaper = 'Scissors'; // This will send the value to the let computerMovePaper = ''; variable
-        }
-        
-        console.log(computerMovePaper); // This will Print the value from computer variable after it get assign automatically
-
-        let resultPaper = '';
-
-        if(computerMovePaper === 'Paper'){
-            resultPaper = 'Match Tie';
-        } else if (computerMovePaper === 'Scissors'){
-            resultPaper = 'You Lose';
-        } else if (computerMovePaper === 'Rock'){
-            resultPaper = 'You Win';
-        }
-        alert(`You Picked Paper. Computer Pick ${computerMovePaper}. ${resultPaper}.`);
-
-    ">    
-        Paper</button>
-    <button onclick="
-    const randomNumberScissors = Math.random(); // We generate the numer automatically from 0 to 1
-    let computerMoveScissors = ''; // The variable for Computer Move
-    if(randomNumberScissors >= 0 && randomNumberScissors < 1/3) { // Define it between 0 to 0.33
-        computerMoveScissors = 'Rock'; // This will send the value to the let computerMoveScissors = ''; variable
-    } else if(randomNumberScissors >= 1/3 && randomNumberScissors < 2/3){ // Define it between 0.33 to 0.66
-        computerMoveScissors = 'Paper'; // This will send the value to the let computerMoveScissors = ''; variable
-    } else if(randomNumberScissors >= 2/3 && randomNumberScissors < 1){ // Define it between 0.66 to 0.99
-        computerMoveScissors = 'Scissors'; // This will send the value to the let computerMoveScissors = ''; variable
+    let computerMovePaper = Math.random();
+    if (computerMovePaper < 0.34) {
+        computerMove = 'rock';
+    } else if(computerMovePaper <= 0.67) {
+        computerMove = 'paper';
+    } else {
+        computerMove = 'scissors';
     }
-    
-    console.log(computerMoveScissors); // This will Print the value from computer variable after it get assign automatically
+    console.log(computerMove);
+    let resultPaper = '';
+    if (computerMove === 'rock') {
+        resultPaper = 'You win!';
+    } else if (computerMove === 'paper') {
+        resultPaper = 'It\'s a tie!';
+    } else {
+        resultPaper = 'You lose!';
+    }
+    ">Paper</button>
 
+    <button onclick="
+    let computerMoveScissors = Math.random();
+    if (computerMoveScissors < 0.34) {
+        computerMove = 'rock';
+    } else if(computerMoveScissors <= 0.67) {
+        computerMove = 'paper';
+    } else {
+        computerMove = 'scissors';
+    }
+    console.log(computerMove);
     let resultScissors = '';
-
-    if(computerMoveScissors === 'Scissors'){
-        resultScissors = 'Match Tie';
-    } else if (computerMoveScissors === 'Rock'){
-        resultScissors = 'You Lose';
-    } else if (computerMoveScissors === 'Paper'){
-        resultScissors = 'You Win';
+    if (computerMove === 'rock') {
+        resultScissors = 'You lose!';
+    } else if (computerMove === 'paper') {
+        resultScissors = 'You win!';
+    } else {
+        resultScissors = 'It\'s a tie!';
     }
-    alert(`You Picked Scissors. Computer Pick ${computerMoveScissors}. ${resultScissors}.`);
-
-    ">
-        
-        Scissors</button>
-    
-
+    alert(`You chose Scissors. Computer chose ${computerMove}. ${resultScissors}`);
+    "
+    >Scissors</button>
     <script>
 
     </script>
