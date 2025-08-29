@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+    <body>
+    <p>Rock Paper Scissors</p>
+    
+    <!-- Steps
+        When we Click the button:
+        1. Computer randomly selects a move
+        2. Compare the moves to get the result
+        3. Display the result in a popup
+    -->
+    <button onclick="
+    const computerMoveRock= computerMove1();
+    
+    let resultRock = '';
+        if (computerMoveRock === 'rock') {
+            resultRock = 'It\'s a tie!';
+        } else if (computerMoveRock === 'paper') {
+            resultRock = 'You lose!';
+        } else {
+            resultRock = 'You win!';
+        }
+        alert(`You chosse Rock. Computer chose ${computerMoveRock}. ${resultRock}`);
+    ">Rock</button>
+
+    <button onclick="
+    const computerMovePaper = computerMove1();
+
+        let resultPaper = '';
+        if (computerMovePaper === 'rock') {
+            resultPaper = 'You win!';
+        } else if (computerMovePaper === 'paper') {
+            resultPaper = 'It\'s a tie!';
+        } else {
+            resultPaper = 'You lose!';
+        }
+        alert(`You chosse Paper. Computer chose ${computerMovePaper}. ${resultPaper}`);
+    ">Paper</button>
+
+    <button onclick="
+        const computerMoveScissors = computerMove1();
+        let resultScissors = '';
+        if (computerMoveScissors === 'rock') {
+            resultScissors = 'You lose!';
+        } else if (computerMoveScissors === 'paper') {
+            resultScissors = 'You win!';
+        } else {
+            resultScissors = 'It\'s a tie!';
+        }
+        alert(`You chosse Scissors. Computer chose ${computerMoveScissors}. ${resultScissors}`);
+    ">Scissors</button>
+    <script>
+        function computerMove1() {
+            let computerMove = Math.random();
+            if (computerMove < 0.34) {
+                computerMove = 'rock';
+            } else if(computerMove <= 0.67) {
+                computerMove = 'paper';
+            } else {
+                computerMove = 'scissors';
+            } return computerMove;
+        }
+            
+             
+    
+    </script>
+    </body>
+    
+    </html>
