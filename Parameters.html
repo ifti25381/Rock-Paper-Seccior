@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parameters</title>
+</head>
+<body>
+    <p>Parameters</p>
+    
+    <!-- Steps
+        When we Click the button:
+        1. Computer randomly selects a move
+        2. Compare the moves to get the result
+        3. Display the result in a popup
+    -->
+    <button onclick="
+    function1();
+    function1();
+    "
+    >Rock</button>
+    <button>Paper</button>
+    <button>Scissors</button>
+    
+    
+    <script>
+        /*
+        return = in functions is used to output a value from the function.
+        parameters = put values into functions to customize them. 
+        for example, if you want to calculate tax for different amounts, you can pass the amount as a parameter to the function.
+        arguments = the actual values you pass to the function when you call it.
+        here is an example:
+        function calculateTax (cost, taxPercent = 0.12) {
+            return cost * taxPercent;
+        }
+        */
+       function calculate(cost, taxPercent = 0.1) {
+        console.log(cost * taxPercent);
+        
+        }
+         calculate(100);
+         calculate(200);
+         calculate(500);
+    </script>
+</body>
+</html>
