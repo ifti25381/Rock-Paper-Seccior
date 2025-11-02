@@ -30,12 +30,24 @@
         isAdmin: true,
         courses: ["html", "css", "js"],
         'delevery-Date': "1 Day",
-        wife: null
-       };
+        wife: null,
+        fun: function funtion1(){
+            console.log("Hello");
+        }
+        };
+        console.log(user.fun());
          console.log(user.name);
          console.log(user['name']);
          //conssole.log(user.delevery-Date); here the '-Date' make confuse the javaScript engine to try to make it minus from the delevery property. to solve this problem we use the following method:
         console.log(user['delevery-Date']); 
+        console.log(JSON.stringify(user));
+        console.log(typeof JSON.stringify(user));
+        const jasonString = JSON.stringify(user);
+        
+
+        const jasonString2 = JSON.parse(jasonString);
+        console.log(jasonString2);
+        console.log(typeof jasonString2);
 
     </script>
     </body>
