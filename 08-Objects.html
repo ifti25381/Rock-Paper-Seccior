@@ -9,6 +9,7 @@
 </head>
     <body>
     <script>
+        /*
         const products = {
             stock1: "scoks",
             stock1Price: 100
@@ -21,6 +22,20 @@
         products.stock2 = "salt";
         products.stock2Price = 30;
         delete products.stock1;
+        console.log(products);
+        */
+       const user = {
+        name: "John",
+        age: 30,
+        isAdmin: true,
+        courses: ["html", "css", "js"],
+        'delevery-Date': "1 Day",
+        wife: null
+       };
+         console.log(user.name);
+         console.log(user['name']);
+         //conssole.log(user.delevery-Date); here the '-Date' make confuse the javaScript engine to try to make it minus from the delevery property. to solve this problem we use the following method:
+        console.log(user['delevery-Date']); 
 
     </script>
     </body>
