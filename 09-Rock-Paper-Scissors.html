@@ -18,42 +18,37 @@
     -->
     <button onclick="
     playerMove('rock', pickComputerMove());
+    console.log(pickComputerMove);
+    console.log(playerMove);
+    
     ">Rock</button>
 
     <button onclick="
     pickComputerMove();
     playerMove('paper', pickComputerMove());
+    console.log(pickComputerMove);
+    console.log(playerMove);
+        
     ">Paper</button>
 
     <button onclick="
     pickComputerMove();
     playerMove('scissors', pickComputerMove());
+    console.log(pickComputerMove);
+    console.log(playerMove);
     ">Scissors</button>
-
     <button onclick="
     scores.wins = 0;
-    scores.losses = 0;
-    scores.ties = 0;
-    localStorage.removeItem('scores');
-    ">Reset Score</button>
+    scores.losser = 0;
+    scores.ties = 0">
+
+    Reset</button>
     <script>
-
-
-        let scores = JSON.parse(localStorage.getItem('scores'));
-        console.log(scores) ||  {
+        const scores = {
             wins: 0,
             losses: 0,
             ties: 0
         };
-        /*if (scores === null){
-            scores = {
-                wins: 0,
-                losses: 0,
-                ties: 0
-            }
-
-        }
-        */
         function pickComputerMove() {
             let randomNumber = Math.random();
             if (randomNumber < 0.34) {
@@ -64,6 +59,7 @@
                 return 'scissors';
             } return randomNumber;
         }
+
         function playerMove(playerMove, computerMove) {
             let result='';
             if (playerMove === computerMove){
@@ -71,7 +67,7 @@
             } else if (playerMove === 'rock' && computerMove === 'scissors' ||
                     playerMove === 'paper' && computerMove === 'rock' ||
                     playerMove === 'scissors' && computerMove === 'paper')
-                {result = 'You win!';}
+            { result = 'You win!';}
 
             else{
                 result = 'You lose';
@@ -83,8 +79,8 @@
             } else {
                 scores.ties += 1;
             }
-
-            localStorage.setItem('scores', JSON.stringify(scores));
+            console.log(scores);
+            
             alert(`You chose ${playerMove}. Computer chose ${computerMove}. ${result}
             Wins: ${scores.wins}, Losses: ${scores.losses}, Ties: ${scores.ties}
             `);
