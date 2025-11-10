@@ -9,12 +9,22 @@
 </head>
     <body>
     <button>Hello</button>
+    <button class="js-button">Second Button</button>
     
     <script>
+        console.log(document.querySelector('button'));
+        console.log(document.querySelector('button').innerHTML);
+        document.querySelector('button').innerHTML = 'Clicked';
+        console.log(document.querySelector('.js-button'));
+
+
+        /*
         console.log(document.title);
         document.title = 'Changed Title';
         console.log(document.body);
 
+        document.body.innerHTML = '<button>inserted by innerHTML</button>';
+        */
     /*document.body.innerHTML = 'hello world!';
     document.title = 'DOM Practice';
     */
