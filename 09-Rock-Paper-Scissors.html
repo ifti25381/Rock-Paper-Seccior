@@ -8,7 +8,7 @@
 
 </head>
     <body>
-    <p>Rock Paper Scissors</p>
+    <p>09-Rock Paper Scissors</p>
     
     <!-- Steps
         When we Click the button:
@@ -37,18 +37,31 @@
     console.log(pickComputerMove);
     console.log(playerMove);
     ">Scissors</button>
-    <button onclick="
-    scores.wins = 0;
-    scores.losser = 0;
-    scores.ties = 0">
+    <p class="js-result"></p>
+    <p class = "js-moves"></p>
+    <p class = "js-scores"></p>
 
-    Reset</button>
+    <button onclick=" 
+    scores.wins = 0;
+    scores.losses = 0;
+    scores.ties = 0;
+    localStorage.removeItem('scores');
+    updateScores();
+    displayResult();
+    displayMove();
+
+    ">Reset</button>
     <script>
         const scores = {
             wins: 0,
             losses: 0,
             ties: 0
         };
+
+        
+
+        updateScores();
+
         function pickComputerMove() {
             let randomNumber = Math.random();
             if (randomNumber < 0.34) {
@@ -80,13 +93,20 @@
                 scores.ties += 1;
             }
             console.log(scores);
-            
-            alert(`You chose ${playerMove}. Computer chose ${computerMove}. ${result}
-            Wins: ${scores.wins}, Losses: ${scores.losses}, Ties: ${scores.ties}
-            `);
 
-        }         
-    </script>
+            updateScores();           
+
+        }
+        function updateScores(){
+            document.querySelector('.js-scores') .innerHTML = `Wins: ${scores.wins}, Losses: ${scores.losses}, Ties: ${scores.ties}`;
+        }
+        function displayMove(){
+            document.querySelector('.js-moves').innerHTML = `You chose ${playerMove}. Computer chose ${computerMove}.`;
+        }
+        function displayResult(){
+            document.querySelector('.js-result').innerHTML = `${result}`;
+        }
+            </script>
     </body>
     
     </html>
