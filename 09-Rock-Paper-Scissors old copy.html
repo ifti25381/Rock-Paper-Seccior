@@ -55,8 +55,6 @@
             ties: 0
         };
 
-        
-
         updateScores();
 
         function pickComputerMove() {
@@ -90,10 +88,12 @@
             } else {
                 scores.ties += 1;
             }
+
             displayResult();
             displayMove();
             updateScores();
         }
+        
         function updateScores(){
             document.querySelector('.js-scores') .innerHTML = `Wins: ${scores.wins}, Losses: ${scores.losses}, Ties: ${scores.ties}`;
         }

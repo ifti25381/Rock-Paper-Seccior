@@ -47,9 +47,7 @@
     scores.ties = 0;
     localStorage.removeItem('scores');
     updateScores();
-    displayResult();
-    displayMove();
-
+    
     ">Reset</button>
     <script>
         const scores = {
@@ -57,8 +55,6 @@
             losses: 0,
             ties: 0
         };
-
-        
 
         updateScores();
 
@@ -73,10 +69,10 @@
             } return randomNumber;
         }
 
-        function playerMove(playerMove, computerMove) {
-            let result='';
+            function playerMove(playerMove, computerMove) {
+
             if (playerMove === computerMove){
-                result = 'it is tie!';
+                result = "It's tie!";
             } else if (playerMove === 'rock' && computerMove === 'scissors' ||
                     playerMove === 'paper' && computerMove === 'rock' ||
                     playerMove === 'scissors' && computerMove === 'paper')
@@ -94,18 +90,17 @@
             }
             console.log(scores);
 
-            updateScores();           
+            updateScores();
+            
+            document.querySelector('.js-moves').innerHTML = `You chose ${playerMove}, Computer chose ${computerMove}`;
+            
+            document.querySelector('.js-result').innerHTML = result;                   
 
         }
         function updateScores(){
             document.querySelector('.js-scores') .innerHTML = `Wins: ${scores.wins}, Losses: ${scores.losses}, Ties: ${scores.ties}`;
         }
-        function displayMove(){
-            document.querySelector('.js-moves').innerHTML = `You chose ${playerMove}. Computer chose ${computerMove}.`;
-        }
-        function displayResult(){
-            document.querySelector('.js-result').innerHTML = `${result}`;
-        }
+            
             </script>
     </body>
     
