@@ -1,4 +1,4 @@
-const todoList = [{name: 'make dinner', date: '2024-06-01'}, {name: 'wash dishes', date: '2024-06-02'}]; //Initial todo list
+const todoList = [{name: "watch youtube", date: "2024-06-01"}, {name: "read book", date: "2024-06-02"}]; //Initial todo list
 
 renderTodoList(); // Initial rendering of the todo list
 
@@ -18,7 +18,7 @@ function renderTodoList() {
     
     <button
     onclick = "todoList.splice(${i}, 1);
-      renderTodoList()";>
+      renderTodoList()"; class = "delet-todo-button">
       Delete</button>
     `;
     todoListHTML += html;
@@ -42,5 +42,8 @@ function addTodo() {
   console.log(todoList);
   inputElement.value = ''; // To clear the input field after adding
   renderTodoList(); // Re-render the todo list to include the new item
-
+  clearDueDates();
+}
+function clearDueDates() {
+document.getElementById("due-date").value = "";  
 }
