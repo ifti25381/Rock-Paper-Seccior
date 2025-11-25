@@ -8,9 +8,23 @@
 
 </head>
     <body>
-        
+        <button onclick="" class="js-button">
+            Click Me
+        </button>
 
         <script>
+
+            const buttonElement = document.querySelector('.js-button');
+
+            const eventListener = () => {
+                console.log('I am "Click Me" button');
+            }
+
+            buttonElement.addEventListener('click', eventListener);
+
+            buttonElement.removeEventListener('click', eventListener);
+
+            buttonElement.addEventListener('click', () => {console.log('This is click again');});
 
             /*
             function greeting(){
@@ -24,7 +38,7 @@
             console.log(sayHello);
             console.log(typeof sayHello);
             sayHello();
-            */
+            
            setTimeout (function () {
                 console.log("Hello after 5 seconds");
            }, 5000);
@@ -34,6 +48,74 @@
            setInterval (function () {
                 console.log("Hello every 3 seconds");
            }, 3000);
+           */
+            /*
+            [
+                'make dinner',
+                'wash dishes',
+                'watch youtube'
+            ].forEach (function (value, index) {
+                console.log(index);
+                console.log(value);
+
+            });
+            */
+
+            /*
+
+            //regular function example
+            function regularFunction(param1, param2) {
+                return param1 + param2;
+            }
+            console.log(regularFunction(5, 10));
+
+            // arrow function example
+
+            const arrowFunction = () => {
+                console.log("Hello from arrow function");
+            };
+            arrowFunction();
+
+            // arrow function with parameters
+            const arrowFunctiononeParam = param1 => {
+                console.log(param1 + 1);
+            };
+            arrowFunctiononeParam(5);
+
+            const arrowFunctionWithParams = (param1, param2) => {
+                return param1 + param2;
+            };
+
+            console.log(arrowFunctionWithParams(5, 10));
+
+            //one line arrow function
+            const oneLineArrowFunction = () => 4+5;
+            console.log(oneLineArrowFunction());
+
+            [
+                'make dinner',
+                'wash dishes',
+                'watch youtube'
+            ].forEach ((value, index) => {
+                if (value === 'wash dishes') {
+                    return;
+                }
+                console.log(value);
+                console.log(index);
+            });        
+
+            const object2 = {
+                exampleMethod1: () => {
+
+                },
+                exampleMethod2 (){
+
+                }
+
+            };
+            */
+
+            
 
         </script>
     </body>

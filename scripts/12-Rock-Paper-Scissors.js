@@ -7,11 +7,22 @@
         updateScores();
 
         // making autoplay function by using setInterval method
+
+        let isAutoPlaying = false;
+        let intervalId;
+
         function autoPlay() {
-            setInterval(function (){
+            if (!isAutoPlaying){
+            intervalId = setInterval(function (){
                 const playGame = pickComputerMove();
                 playerMove(playGame, pickComputerMove());
             }, 1500);
+            isAutoPlaying = true;
+            }
+            else {
+                clearInterval(intervalId);
+                isAutoPlaying = false;
+            }
         }
         function pickComputerMove() {
             let randomNumber = Math.random();
@@ -23,6 +34,29 @@
                 return 'scissors';
             } return randomNumber;
         }
+
+        document.querySelector('.js-rock-button').addEventListener('click', () => {
+            playerMove('rock', pickComputerMove());
+        });
+
+        document.querySelector('.js-paper-button').addEventListener('click', () => {
+            playerMove('paper', pickComputerMove());
+        });
+
+        document.querySelector('.js-scissors-button').addEventListener('click', () => {
+            playerMove('scissors', pickComputerMove());
+        });
+
+        document.body.addEventListener('keydown', (event) => {
+            if (event.key === 'r'){playerMove('rock', pickComputerMove());}
+            else if (event.key === 'p'){playerMove('paper', pickComputerMove());}
+            else if (event.key === 's'){playerMove('scissors', pickComputerMove());}
+            else if (event.key === 'a'){autoPlay();}
+            else {
+                alert('Invalid key! Please press R, P, S or A to play the game.');
+                return;
+            }
+        });
 
         function playerMove(playerMove, computerMove) {
 
