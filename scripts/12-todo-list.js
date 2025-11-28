@@ -30,6 +30,12 @@ function renderTodoList() {
   console.log(todoListHTML); // Log the HTML representation of the todo list
   document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 }
+
+document.querySelector('.js-add-todo-button').addEventListener('click', () => {
+  addTodo();
+});
+
+
 function addTodo() {
   const inputElement = document.querySelector('.js-name-input'); // Select the input element
   const inputDateElement = document.querySelector('.js-due-date-input'); // Select the date from input element
