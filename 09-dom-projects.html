@@ -10,20 +10,22 @@
 <h1>Youtube Subscribe Button</h1>
 
 <button onclick="
-  Subscribe();
-" class="js-subscribe-button"
+    Subscribe();
+  " class="js-subscribe-button"
 
->Subscribe</button>
+  >Subscribe
+</button>
 
 <script> 
 function Subscribe () {
   const buttonElement = document.querySelector('.js-subscribe-button');
 
-if (buttonElement.innerText === 'Subscribe') {
-  buttonElement.innerText = 'Subscribed';
-}else {
-  buttonElement.innerText = 'Subscribe';
-}
+  if (buttonElement.innerText === 'Subscribe') {
+      buttonElement.innerText = 'Subscribed';
+  }
+    else {
+    buttonElement.innerText = 'Subscribe';
+      }
 }
 
 </script>
