@@ -6,6 +6,7 @@
   <title>08 Rock Paper Scissors</title>
 </head>
 <body>
+  <h1>Rock Paper Scissors</h1>
     
     <button onclick="
     playGame('Rock');
@@ -27,15 +28,16 @@
       score.losses = 0;
       score.ties = 0;
       alert('Score has been reset.');
+      localStorage.removeItem('score');
     ">Reset Score</button>
 
     <script>
-
-      const score = {
-        wins: 0,
-        losses: 0,
-        ties: 0
-      };
+      
+      let score = JSON.parse(localStorage.getItem('score'));
+      if (!score || typeof score !== 'object') {
+        score = { wins: 0, losses: 0, ties: 0 };
+      }
+      
 
       function playGame (playerMove) {
         const computerMove = pickComputerMove();
@@ -57,12 +59,12 @@
         } else {
           score.wins += 1;
         }
-      alert(`You chose ${playerMove}. The computer chose ${computerMove}. ${result}.
-      wins: ${score.wins} losses: ${score.losses} ties: ${score.ties}`);
-      }
-      
+        localStorage.setItem('score', JSON.stringify(score)); // saving socre of the game to local stoge
+        
+            alert(`You chose ${playerMove}. Computer chose ${computerMove}. ${result}\nWins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+        }
+
    function pickComputerMove () {
-        playerMove = 'Scissors';
           const randomNumber = Math.random();
           let computerMove = '';
         if (randomNumber >= 0 && randomNumber < 1/3) {
