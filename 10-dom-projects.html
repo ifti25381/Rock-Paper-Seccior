@@ -1,11 +1,9 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>10 dom projects</title>
-  <link rel="icon" href="global-search_favicon.png">
-   <style>
+<html>
+  <head>
+    <title>DOM Exercises</title>
+    <style>
       body {
         font-family: Arial;
         padding-bottom: 110px;
@@ -59,57 +57,73 @@
         margin-top: 55px;
       }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button class="subscribe-button js-subscribe-button"
+      onclick="subscribe()">
+      Subscribe
+    </button>
 
-<h1>Youtube Subscribe Button</h1>
+    <p class="shipping-calculator-title">Amazon Shipping Calculator</p>
+    <p>
+      Orders under $40 = +$10 shipping.<br>
+    </p>
+    <p>
+      Orders over $40 = FREE shipping.
+    </p>
+    <p>
+      <input placeholder="Cost of order"
+        class="cost-input js-cost-input"
+        onkeydown="handleCostInputKeydown(event)">
+      <button class="calculate-button"
+        onclick="calculateTotal()">
+        Calculate
+      </button>
+    </p>
+    <p class="js-total"></p>
 
-<button onclick="
-    Subscribe();
-  " class="js-subscribe-button subscribe-button"
+    <p class="rock-paper-scissors-title">Rock Paper Scissors</p>
+    <a href="https://supersimple.dev/projects/rock-paper-scissors">
+      Click here
+    </a>
 
-  >Subscribe
-</button>
+    <script>
+      function handleCostInputKeydown(event) {
+        const key = event.key;
 
-<p>Amazon Shiping Calculater</p>
-<input type="text" placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="
-handleCostKeydown(event);
-">
-<button class="calculate-button" onclick="
-calculateTotle();
-">Calculate</button>
-<p class="js-total-cost"></p>
-
-<script> 
-function handleCostKeydown (event) {
-  if (event.key === 'Enter') {
-  calculateTotle();
-  }
-}
-function calculateTotle () {
- const inputElement = document.querySelector('.js-cost-input');
- let cost = Number(inputElement.value);
- if (cost < 40) {
-  cost += 10;
-  console.log(cost);
-  document.querySelector('.js-total-cost').innerText = cost;
- }
- else {
-  console.log(cost);
-  document.querySelector('.js-total-cost').innerText = cost;
- }
-}
-function Subscribe () {
-  const buttonElement = document.querySelector('.js-subscribe-button');
-
-  if (buttonElement.innerText === 'Subscribe') {
-      buttonElement.innerText = 'Subscribed';
-  }
-    else {
-    buttonElement.innerText = 'Subscribe';
+        if (key === 'Enter') {
+          calculateTotal();
+        } else if (key === 'Escape') {
+          document.querySelector('.cost-input').value = '';
+        }
       }
-}
 
-</script>
-</body>
+      function subscribe() {
+        const subscribeButton = document.querySelector('.js-subscribe-button');
+
+        if (subscribeButton.classList.contains('is-subscribed')) {
+          subscribeButton.innerHTML = 'Subscribe';
+          subscribeButton.classList.remove('is-subscribed');
+
+        } else {
+          subscribeButton.innerHTML = 'Subscribed';
+          subscribeButton.classList.add('is-subscribed');
+        }
+      }
+
+      function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+        const cost = Number(inputElement.value) * 100;
+
+        if (cost < 3500) {
+          document.querySelector('.js-total')
+            .innerHTML = `$${(cost + 1000) / 100}`;
+        } else {
+          document.querySelector('.js-total')
+            .innerHTML = `$${cost / 100}`;
+        }
+      }
+    </script>
+  </body>
 </html>
