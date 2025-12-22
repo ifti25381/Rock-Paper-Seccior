@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>12 Advance function</title>
+    <link rel="icon" href="global-search_favicon.png">
+  </head>
+ <body>
+
+  <button onclick="" class="js-button">Click</button>
+    
+  <script>
+
+    const buttonElement = document.querySelector('.js-button');
+    const eventListener = () => {
+      console.log('click');
+    };
+
+    buttonElement.addEventListener('click', eventListener);
+   
+
+    buttonElement.addEventListener('click', () => {
+      console.log('click2');
+    });
+     buttonElement.removeEventListener('click', eventListener);
+    
+    [
+  'make dinner',
+  'watch youtube',
+  'wash dishes'
+].forEach(function(value){
+  console.log(value);
+});
+
+[
+  'make dinner',
+  'watch youtube',
+  'wash dishes'
+].forEach((value, index) => {
+  console.log(value, index);
+  console.log(index);
+})
+
+    const regularFunction = function (param) {
+      console.log('hello from regular function');
+      return 5;
+    }
+
+    
+    
+    const arowFunction = (param) => {
+      console.log('hello from arow functon');
+      return 5;
+    };
+    arowFunction();
+    regularFunction();
+
+    // if arrow function has one param the () brakets are optional
+    const oneParam = param => {
+      console.log(param + 1);
+    }
+    oneParam(1);
+    //if arrow function has one line of code. the {} brakets and return option are optional
+    const oneLine = () =>  2+3;
+    console.log(oneLine());
+
+
+
+  </script>
+</body>
+</html>
