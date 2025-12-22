@@ -27,9 +27,9 @@ let score = JSON.parse(localStorage.getItem('score'));
           
       }
 
-      document.querySelector('.js-rock-button', () => {playGame('Rock');});
-      document.querySelector('.js-paper-button', () => {playGame('Paper');});
-      document.querySelector('.js-scissors-button', () => {playGame('Scissors');});
+      document.querySelector('.js-rock-button').addEventListener('click', () => {playGame('Rock');});
+      document.querySelector('.js-paper-button').addEventListener('click', () => {playGame('Paper');});
+      document.querySelector('.js-scissors-button').addEventListener('click', () => {playGame('Scissors');});
 
       function playGame (playerMove) {
         const computerMove = pickComputerMove();
