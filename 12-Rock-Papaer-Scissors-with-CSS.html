@@ -12,16 +12,19 @@
     
     <button class="move-button" onclick="
     playGame('Rock');
+    isAutoPlayingStop();
 
     "><img src="emoji/rock-emoji.png" alt="rock-emoji-png" class="move-icon"></button>
     
     <button class="move-button" onclick="
       playGame('Paper');
+      isAutoPlayingStop();
 
     "><img src="emoji/paper-emoji.png" alt="paper-emoji-ong" class="move-icon"></button>
     
     <button class="move-button" onclick="
     playGame('Scissors');
+    isAutoPlayingStop();
 
     "><img src="emoji/scissors-emoji.png" alt="scissors-emoji-png" class="move-icon"></button>
     <p class="js-result result"></p>
@@ -35,7 +38,7 @@
       score.ties = 0;
       localStorage.removeItem('score');
       updateScoreElement();
-      AutoPlay();
+      isAutoPlayingStop();
     ">Reset Score</button>
     <button class="auto-play-button" onclick="
     AutoPlay();

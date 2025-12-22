@@ -7,7 +7,11 @@ let score = JSON.parse(localStorage.getItem('score'));
 
       let isAutoPlaying = false;
       let intervalid;
-
+      
+      function isAutoPlayingStop (){
+        clearInterval(intervalid);
+         isAutoPlaying = false
+      }
       function AutoPlay () 
       {
         if (!isAutoPlaying) {
@@ -18,8 +22,7 @@ let score = JSON.parse(localStorage.getItem('score'));
           isAutoPlaying = true;
         }
             else {
-            clearInterval(intervalid);
-            isAutoPlaying = false
+            isAutoPlayingStop();
           };
           
       }
