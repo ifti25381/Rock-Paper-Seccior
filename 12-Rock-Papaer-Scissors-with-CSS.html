@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>12 Rock Paper Scissors</title>
   <link rel="icon" href="global-search_favicon.png">
-  <link rel="stylesheet" href="CSS-folder/10-Rock-Paper-Scissor.CSS">
+  <link rel="stylesheet" href="CSS-folder/12-Rock-Paper-Scissor.CSS">
 </head>
 <body>
   <h1>Rock Paper Scissors</h1>
@@ -35,10 +35,14 @@
       score.ties = 0;
       localStorage.removeItem('score');
       updateScoreElement();
+      AutoPlay();
     ">Reset Score</button>
+    <button class="auto-play-button" onclick="
+    AutoPlay();
+    ">Auto Play</button>
 
    
-    <script src="js-folder/10-Rock-Paper-Scissor.js"></script>
+    <script src="js-folder/12-Rock-Paper-Scissor.js"></script>
 
   </body>
 </html>
